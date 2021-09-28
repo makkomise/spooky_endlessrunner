@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4cb98e48cd7e4724ba51f7ea8ed2b31d
+guid: a5a7f7a3d209a5f4195d1f20aa56823b
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pillar
-    second: {fileID: 2100000, guid: 72fbedc89c2ac904889e8d5ccf286045, type: 2}
+      name: Wall
+    second: {fileID: 2100000, guid: 8d2a59bdb7af5bd43923fd3cb7e3a58c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -70,9 +70,9 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 5
+    normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 2
+    tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
