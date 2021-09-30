@@ -8,16 +8,13 @@ public class EnvironmentGenerator : MonoBehaviour
     public Camera mainCamera;
     public Transform startPoint; 
     public EnvironmentTiling tilePrefab;
-    public float movingSpeed;
+    public float movingSpeed = 10;
     public int tilesToPreSpawn; 
     
 
     List<EnvironmentTiling> spawnedTiles = new List<EnvironmentTiling>();
     [HideInInspector]
-    public bool gameOver = false;
-    static bool gameStarted = false;
-    float score = 0;
-
+    
     public static EnvironmentGenerator instance;
 
     // Start is called before the first frame update
@@ -34,7 +31,7 @@ public class EnvironmentGenerator : MonoBehaviour
             
             
             
-                spawnedTile.ActivateRandomCorridor();
+                spawnedTile.ActivateCorridor();
             
 
             spawnPosition = spawnedTile.endPoint.position;
@@ -46,61 +43,23 @@ public class EnvironmentGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Move the object upward in world space x unit/second.
-        //Increase speed the higher score we get
-        if (!gameOver && gameStarted)
-        {
-            transform.Translate(-spawnedTiles[0].transform.forward * Time.deltaTime * (movingSpeed + (score / 500)), Space.World);
-            score += Time.deltaTime * movingSpeed;
-        }
+        // Liikuttaa prefabia tietyll‰ nopeudella
+        // Kentt‰ muuttuu nopeemmaksi mit‰ enemm‰n on "pisteit‰" (t‰ll‰ hetkell‰ pisteit‰ tulee ihan sit‰ mukaa mit‰ pitemp‰‰n pysyy elossa)
+        
+            transform.Translate(-spawnedTiles[0].transform.forward * Time.deltaTime * movingSpeed, Space.World);
+            
+        
 
         if (mainCamera.WorldToViewportPoint(spawnedTiles[0].endPoint.position).z < 0)
         {
-            //Move the tile to the front if it's behind the Camera
+            // Despawnaa ns. kameran taakse j‰‰v‰t prefabit ja spawnaa ne uudestaan startpointtiin
             EnvironmentTiling tileTmp = spawnedTiles[0];
             spawnedTiles.RemoveAt(0);
             tileTmp.transform.position = spawnedTiles[spawnedTiles.Count - 1].endPoint.position - tileTmp.startPoint.localPosition;
-            tileTmp.ActivateRandomCorridor();
+            tileTmp.ActivateCorridor();
             spawnedTiles.Add(tileTmp);
         }
 
-        if (gameOver || !gameStarted)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (gameOver)
-                {
-                    //Restart current scene
-                    Scene scene = SceneManager.GetActiveScene();
-                    SceneManager.LoadScene(scene.name);
-                }
-                else
-                {
-                    //Start the game
-                    gameStarted = true;
-                }
-            }
-        }
-    }
-
-    void OnGUI()
-    {
-        if (gameOver)
-        {
-            GUI.color = Color.red;
-            GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 200, 200), "Game Over\nYour score is: " + ((int)score) + "\nPress 'Space' to restart");
-        }
-        else
-        {
-            if (!gameStarted)
-            {
-                GUI.color = Color.red;
-                GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 200, 200), "Press 'Space' to start");
-            }
-        }
-
-
-        GUI.color = Color.green;
-        //GUI.Label(new Rect(5, 5, 200, 25), "Score: " + ((int)score));
-    }
+        
+    }    
 }
