@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
             transform.Translate(Vector3.right * Time.deltaTime * movementSpeed);
         }
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -2.5f, 2.5f), transform.position.y, 0);  //rajottaa sivuttaisliikkeen m‰‰r‰‰ ettei mee kent‰n "yli"
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -1.5f, 1.5f), transform.position.y, 0);  //rajottaa sivuttaisliikkeen m‰‰r‰‰ ettei mee kent‰n "yli"
     }
 
     // Update is called once per frame

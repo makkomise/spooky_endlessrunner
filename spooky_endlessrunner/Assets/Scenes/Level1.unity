@@ -213,7 +213,7 @@ Transform:
   m_GameObject: {fileID: 84965002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.1, z: 20}
-  m_LocalScale: {x: 6, y: 0.1, z: 45}
+  m_LocalScale: {x: 4, y: 0.1, z: 45}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -5514,9 +5514,6 @@ MonoBehaviour:
   tilePrefab: {fileID: 1880777051264536880, guid: e97eba73054f3404da9cc29a65294749, type: 3}
   movingSpeed: 10
   tilesToPreSpawn: 15
-  gameOver: 0
-  gameStarted: 0
-  score: 0
 --- !u!4 &1383672324
 Transform:
   m_ObjectHideFlags: 0
