@@ -66,6 +66,8 @@ m_PackageAssets:
         - 1.7.1
         - 1.8.0
         - 1.9.0
+        - 1.10.2
+        - 1.11.2
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -78,6 +80,8 @@ m_PackageAssets:
         - 2.1.0-preview.6
         compatible:
         - 1.9.0
+        - 1.10.2
+        - 1.11.2
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -352,6 +356,7 @@ m_PackageAssets:
         - 1.2.1
         - 1.2.2
         - 1.2.3
+        - 1.2.4
         compatible:
         - 1.0.2
         - 1.0.3
@@ -364,7 +369,8 @@ m_PackageAssets:
         - 1.2.1
         - 1.2.2
         - 1.2.3
-        verified: 1.2.3
+        - 1.2.4
+        verified: 1.2.4
       dependencies: []
       resolvedDependencies: []
       keywords: []
@@ -471,12 +477,12 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 0
+      datePublishedTicks: 637647922650000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: https://github.com/Unity-Technologies/com.unity.test-framework.git
+        url: git+https://github.com/Unity-Technologies/com.unity.test-framework.git
         revision: dac53542acdab7a12e9ebf111ac588d0e53cf483
         path: 
     - packageId: com.unity.textmeshpro@3.0.6
