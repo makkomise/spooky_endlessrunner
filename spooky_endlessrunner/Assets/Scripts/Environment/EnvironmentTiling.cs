@@ -10,6 +10,8 @@ public class EnvironmentTiling: MonoBehaviour
 
     public void ActivateCorridor()    //spawnaa käytävä-prefabeja
     {
-        corridor[0].SetActive(true);
+        System.Random random = new System.Random();
+        int randomNumber = random.Next(0, corridor.Length);
+        corridor[randomNumber].SetActive(true);
     }
 }
