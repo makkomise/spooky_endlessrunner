@@ -44,7 +44,6 @@ public class EnvironmentGenerator : MonoBehaviour
     void Update()
     {
         // Liikuttaa prefabia tietyll‰ nopeudella
-        // Kentt‰ muuttuu nopeemmaksi mit‰ enemm‰n on "pisteit‰" (t‰ll‰ hetkell‰ pisteit‰ tulee ihan sit‰ mukaa mit‰ pitemp‰‰n pysyy elossa)
         
             transform.Translate(-spawnedTiles[0].transform.forward * Time.deltaTime * movingSpeed, Space.World);
             

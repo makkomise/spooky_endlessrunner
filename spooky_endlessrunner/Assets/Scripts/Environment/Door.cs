@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public float movingSpeed = 10;
-    public float score;
+    public float moveSpeed = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -16,8 +15,6 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {            
-        transform.Translate(Vector3.back * Time.deltaTime * (movingSpeed + (score / 500)), Space.World);
-        score += Time.deltaTime * movingSpeed;
-        
+        transform.Translate(Vector3.back * Time.deltaTime * moveSpeed, Space.World);        
     }
 }

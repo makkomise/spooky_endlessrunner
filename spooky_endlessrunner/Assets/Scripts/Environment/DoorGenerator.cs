@@ -22,7 +22,7 @@ public class DoorGenerator: MonoBehaviour
         while (enabled)
         {
             yield return new WaitForSeconds(Random.Range(waitSecondsMin, waitSecondsMax));
-            Instantiate(door, new Vector3(3f, transform.position.y, transform.position.z), transform.rotation);
+            Instantiate(door, new Vector3(2f, transform.position.y, transform.position.z), transform.rotation);
 
         }
     }
@@ -31,7 +31,7 @@ public class DoorGenerator: MonoBehaviour
         while (enabled)
         {
             yield return new WaitForSeconds(Random.Range(waitSecondsMin, waitSecondsMax));
-            Instantiate(door, new Vector3(-3f, transform.position.y, transform.position.z), transform.rotation);
+            Instantiate(door, new Vector3(-2f, transform.position.y, transform.position.z), transform.rotation);
 
         }
     }
