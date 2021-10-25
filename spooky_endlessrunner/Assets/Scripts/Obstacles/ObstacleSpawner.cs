@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
 
-    public GameObject door;
+    public GameObject obstacle;
     public float waitSecondsMin;
     public float waitSecondsMax;
 
@@ -21,7 +21,7 @@ public class ObstacleSpawner : MonoBehaviour
         while (enabled)
         {
             yield return new WaitForSeconds(Random.Range(waitSecondsMin, waitSecondsMax));
-            Instantiate(door, new Vector3(Random.Range(-2f, 2f), transform.position.y, transform.position.z), transform.rotation);
+            Instantiate(obstacle, new Vector3(Random.Range(-1.5f, 1.5f), transform.position.y, transform.position.z), transform.rotation);
 
         }
     }
