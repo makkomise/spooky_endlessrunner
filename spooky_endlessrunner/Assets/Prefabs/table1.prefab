@@ -253,9 +253,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5571424629670833452}
   - component: {fileID: 40170137591495771}
+  - component: {fileID: -130030901256539104}
   m_Layer: 0
   m_Name: table1
-  m_TagString: Untagged
+  m_TagString: Table
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -290,3 +291,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+--- !u!65 &-130030901256539104
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5051487929396115350}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9003959, y: 1.0464499, z: 0.9227597}
+  m_Center: {x: -0.00003504753, y: 0.49290907, z: 0.000621289}

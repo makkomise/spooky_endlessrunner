@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 
@@ -13,7 +14,6 @@ public class Player : MonoBehaviour
     Rigidbody rb;
     bool grounded = false;
     Vector3 defaultScale;
-    
 
     // Start is called before the first frame update
     void Start()
@@ -65,5 +65,18 @@ public class Player : MonoBehaviour
         // From the jump height and gravity we deduce the upwards speed 
         // for the character to reach at the apex.
         return Mathf.Sqrt(2 * jumpHeight * gravity);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Table"))
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 }

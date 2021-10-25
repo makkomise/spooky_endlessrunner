@@ -12,27 +12,17 @@ public class DoorGenerator: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnerCoroutine1());
-        StartCoroutine(SpawnerCoroutine2());
+        StartCoroutine(SpawnerCoroutine1());       
     }    
-
 
     IEnumerator SpawnerCoroutine1()
     {
         while (enabled)
         {
             yield return new WaitForSeconds(Random.Range(waitSecondsMin, waitSecondsMax));
-            Instantiate(door, new Vector3(2f, transform.position.y, transform.position.z), transform.rotation);
-
-        }
-    }
-    IEnumerator SpawnerCoroutine2()
-    {
-        while (enabled)
-        {
+            Instantiate(door, new Vector3(2f, transform.position.y, transform.position.z), transform.rotation); 
             yield return new WaitForSeconds(Random.Range(waitSecondsMin, waitSecondsMax));
             Instantiate(door, new Vector3(-2f, transform.position.y, transform.position.z), transform.rotation);
-
         }
-    }
+    }    
 }
