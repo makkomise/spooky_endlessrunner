@@ -10,14 +10,16 @@ public class GameOverScreen : MonoBehaviour
 
     public void ScoreSetup(int score)
     {
-        
-        scoreText.text = "SCORE: " + EnvironmentGenerator.instance.score.ToString();
+
+        scoreText.text = "SCORE: ";
     }
 
     
     public void Restart()  //Lataa ekan kentän kun painaa play-nappia
     {
+        RenderSettings.fogDensity = 0.001f;
         SceneManager.LoadScene("Level1");
+
     }
 
     public void MainMenu()  //lataa mainmenun

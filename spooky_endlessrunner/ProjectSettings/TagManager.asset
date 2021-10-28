@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Table
+  - Candle
   layers:
   - Default
   - TransparentFX

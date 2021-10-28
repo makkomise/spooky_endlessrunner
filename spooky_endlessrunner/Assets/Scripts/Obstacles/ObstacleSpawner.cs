@@ -12,17 +12,16 @@ public class ObstacleSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnerCoroutine());
+        StartCoroutine(ObstacleCoroutine());           
     }
 
 
-    IEnumerator SpawnerCoroutine()
+    IEnumerator ObstacleCoroutine()
     {
         while (enabled)
         {
             yield return new WaitForSeconds(Random.Range(waitSecondsMin, waitSecondsMax));
-            Instantiate(obstacle, new Vector3(Random.Range(-1.5f, 1.5f), transform.position.y, transform.position.z), transform.rotation);
-
+            Instantiate(obstacle, new Vector3(Random.Range(-1.5f, 1.5f), transform.position.y, transform.position.z), transform.rotation);            
         }
-    }
+    }    
 }
