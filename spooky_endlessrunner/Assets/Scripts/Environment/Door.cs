@@ -15,6 +15,6 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {            
-        transform.Translate(Vector3.back * Time.deltaTime * (movingSpeed + (EnvironmentGenerator.instance.score / 500)), Space.World);        
+        transform.Translate(Vector3.back * Time.deltaTime * movingSpeed, Space.World);        
     }
 }

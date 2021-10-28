@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstacleMove : MonoBehaviour
 {
-    public float movingSpeed = 8;
+    public float movingSpeed = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +14,7 @@ public class ObstacleMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.back * Time.deltaTime * (movingSpeed + (EnvironmentGenerator.instance.score / 500)), Space.World);
+        transform.Translate(Vector3.back * Time.deltaTime * movingSpeed, Space.World);
 
     }
 }

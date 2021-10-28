@@ -9,11 +9,10 @@ public class EnvironmentGenerator : MonoBehaviour
     public Camera mainCamera;
     public Transform startPoint; 
     public EnvironmentTiling tilePrefab;
-    public float movingSpeed = 8;
+    public float movingSpeed = 10;
     public int tilesToPreSpawn;
 
-    public float score = 0;
-
+    public int score;
 
     List<EnvironmentTiling> spawnedTiles = new List<EnvironmentTiling>();
     
@@ -37,14 +36,16 @@ public class EnvironmentGenerator : MonoBehaviour
             spawnedTile.transform.SetParent(transform);
             spawnedTiles.Add(spawnedTile);
         }
+
+        score = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Liikuttaa prefabia tietyllä nopeudella
-        transform.Translate(-spawnedTiles[0].transform.forward * Time.deltaTime * (movingSpeed + (score / 500)), Space.World);
-        score += Time.deltaTime * movingSpeed;
+        transform.Translate(-spawnedTiles[0].transform.forward * Time.deltaTime * movingSpeed, Space.World);
+        score += 1;
       
                            
         if (mainCamera.WorldToViewportPoint(spawnedTiles[0].endPoint.position).z < 0)
@@ -56,5 +57,5 @@ public class EnvironmentGenerator : MonoBehaviour
             tileTmp.ActivateCorridor();
             spawnedTiles.Add(tileTmp);
         }                
-    }    
+    }  
 }
