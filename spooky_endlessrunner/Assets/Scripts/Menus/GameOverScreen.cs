@@ -6,12 +6,17 @@ using UnityEngine.UI;
 
 public class GameOverScreen : MonoBehaviour
 {
-    public Text scoreText;
+    public Text score;
+    public Text highScore;
 
-    public void ScoreSetup(int score)
+
+    void Update()
     {
+        int scoreNumber = PlayerPrefs.GetInt("Score", 0);
+        score.text = "SCORE: " + scoreNumber.ToString();
 
-        scoreText.text = "SCORE: ";
+        int highScoreNumber = PlayerPrefs.GetInt("HighScore", 0);
+        highScore.text = "HIGHSCORE: " + highScoreNumber.ToString();
     }
 
     
@@ -19,7 +24,6 @@ public class GameOverScreen : MonoBehaviour
     {
         RenderSettings.fogDensity = 0.001f;
         SceneManager.LoadScene("Level1");
-
     }
 
     public void MainMenu()  //lataa mainmenun

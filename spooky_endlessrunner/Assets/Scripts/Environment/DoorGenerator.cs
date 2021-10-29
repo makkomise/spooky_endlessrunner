@@ -9,13 +9,21 @@ public class DoorGenerator: MonoBehaviour
     public float waitSecondsMin;
     public float waitSecondsMax;
 
+    public GameObject animatedDoor;
+    public float animWaitSecondsMin;
+    public float animWaitSecondsMax;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnerCoroutine1());       
-    }    
+        StartCoroutine(DoorPrefabCoroutine());
+        StartCoroutine(AnimatedDoorPrefabCoroutine());  
+    }
 
-    IEnumerator SpawnerCoroutine1()
+    IEnumerator DoorPrefabCoroutine()
     {
         while (enabled)
         {
@@ -24,5 +32,15 @@ public class DoorGenerator: MonoBehaviour
             yield return new WaitForSeconds(Random.Range(waitSecondsMin, waitSecondsMax));
             Instantiate(door, new Vector3(-2f, transform.position.y, transform.position.z), transform.rotation);
         }
-    }    
+    }
+    IEnumerator AnimatedDoorPrefabCoroutine()
+    {
+        while (enabled)
+        {
+            yield return new WaitForSeconds(Random.Range(waitSecondsMin, waitSecondsMax));
+            Instantiate(animatedDoor, new Vector3(2f, transform.position.y, transform.position.z), transform.rotation);
+            yield return new WaitForSeconds(Random.Range(waitSecondsMin, waitSecondsMax));
+            Instantiate(animatedDoor, new Vector3(-2f, transform.position.y, transform.position.z), transform.rotation);
+        }
+    }
 }

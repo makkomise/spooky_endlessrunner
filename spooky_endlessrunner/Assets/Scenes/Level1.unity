@@ -484,7 +484,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827177245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.538, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 258675413}
@@ -5470,6 +5470,8 @@ MonoBehaviour:
   tilePrefab: {fileID: 7448010392686136576, guid: e97eba73054f3404da9cc29a65294749, type: 3}
   movingSpeed: 10
   tilesToPreSpawn: 15
+  score: 0
+  highScore: 0
 --- !u!4 &1383672324
 Transform:
   m_ObjectHideFlags: 0
@@ -5497,7 +5499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fogDensity: 0.001
-  reduceSpeed: 200
+  reduceSpeed: 300
 --- !u!1 &2129975279
 GameObject:
   m_ObjectHideFlags: 0
@@ -5530,6 +5532,9 @@ MonoBehaviour:
   door: {fileID: 8279110664938616242, guid: 6dfb810d63ae3fd4cb1ac794672079b4, type: 3}
   waitSecondsMin: 2
   waitSecondsMax: 5
+  animatedDoor: {fileID: 6425654286510671976, guid: 70249e4487f24c5429c16bdb0833cfef, type: 3}
+  animWaitSecondsMin: 1
+  animWaitSecondsMax: 2
 --- !u!4 &2129975281
 Transform:
   m_ObjectHideFlags: 0

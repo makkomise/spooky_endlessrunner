@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1321337061169374856}
   m_Layer: 0
-  m_Name: Door2
+  m_Name: DoorRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6824122929782725913}
   m_Layer: 0
-  m_Name: Door1
+  m_Name: DoorLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
