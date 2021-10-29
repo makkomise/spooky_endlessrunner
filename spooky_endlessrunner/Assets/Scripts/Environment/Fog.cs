@@ -5,13 +5,11 @@ using UnityEngine;
 public class Fog: MonoBehaviour
 {
     public float fogDensity = 0.001f;
-    public float reduceSpeed;
-    
 
     // Update is called once per frame
     void Update()
     {
-        fogDensity += Time.deltaTime / 100;
+        fogDensity += Time.deltaTime / 200;
         RenderSettings.fogDensity = fogDensity;
     }
 }

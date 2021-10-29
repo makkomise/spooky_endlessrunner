@@ -11,6 +11,7 @@ public class EnvironmentGenerator : MonoBehaviour
     public EnvironmentTiling tilePrefab;
     public float movingSpeed = 10;
     public int tilesToPreSpawn;
+    public int tilesWithoutObstacles = 2;
 
     public int score;
     public int highScore;
@@ -23,14 +24,23 @@ public class EnvironmentGenerator : MonoBehaviour
     void Start()    //spawnaa skenen alussa heti jonoon sopivan m‰‰r‰n prefabeja
     {
         instance = this;
+        int tilesWithoutDoorsTmp = tilesWithoutObstacles;
         Vector3 spawnPosition = startPoint.position;
         
         for (int i = 0; i < tilesToPreSpawn; i++)
         {
             spawnPosition -= tilePrefab.startPoint.localPosition;
-            EnvironmentTiling spawnedTile = Instantiate(tilePrefab, spawnPosition, Quaternion.identity) as EnvironmentTiling;          
-                        
-            spawnedTile.ActivateCorridor();
+            EnvironmentTiling spawnedTile = Instantiate(tilePrefab, spawnPosition, Quaternion.identity) as EnvironmentTiling;  
+            
+            if (tilesWithoutDoorsTmp > 0)
+            {
+                spawnedTile.DeactivateAllObstacles();
+                tilesWithoutDoorsTmp--;
+            }
+            else
+            {
+                spawnedTile.ActivateRandomCorridor();
+            }
             
             spawnPosition = spawnedTile.endPoint.position;
             spawnedTile.transform.SetParent(transform);
@@ -61,13 +71,8 @@ public class EnvironmentGenerator : MonoBehaviour
             EnvironmentTiling tileTmp = spawnedTiles[0];
             spawnedTiles.RemoveAt(0);
             tileTmp.transform.position = spawnedTiles[spawnedTiles.Count - 1].endPoint.position - tileTmp.startPoint.localPosition;
-            tileTmp.ActivateCorridor();
+            tileTmp.ActivateRandomCorridor();
             spawnedTiles.Add(tileTmp);
         }        
-    }
-
-    void OnDisable()
-    {
-        
     }
 }

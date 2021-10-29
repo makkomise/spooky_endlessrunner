@@ -6,12 +6,20 @@ public class EnvironmentTiling: MonoBehaviour
 {
     public Transform startPoint;
     public Transform endPoint;
-    public GameObject[] corridor;
+    public GameObject[] obstacles;
 
-    public void ActivateCorridor()    //spawnaa käytävä-prefabeja
+    public void ActivateRandomCorridor()    //spawnaa käytävä-prefabeja
     {
+        DeactivateAllObstacles();
         System.Random random = new System.Random();
-        int randomNumber = random.Next(0, corridor.Length);
-        corridor[randomNumber].SetActive(true);
+        int randomNumber = random.Next(0, obstacles.Length);
+        obstacles[randomNumber].SetActive(true);
+    }
+    public void DeactivateAllObstacles()
+    {
+        for (int i = 0; i < obstacles.Length; i++)
+        {
+            obstacles[i].SetActive(false);
+        }
     }
 }
