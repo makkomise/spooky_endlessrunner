@@ -9,7 +9,7 @@ public class Fog: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fogDensity += Time.deltaTime / 200;
+        fogDensity += Time.deltaTime / 300;
         RenderSettings.fogDensity = fogDensity;
     }
 }

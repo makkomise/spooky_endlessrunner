@@ -5495,6 +5495,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCandle
       objectReference: {fileID: 0}
+    - target: {fileID: 5891591028986532491, guid: 662ae42950363314cb676bc10d315a91, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6523730691651176497, guid: 662ae42950363314cb676bc10d315a91, type: 3}
       propertyPath: m_RootOrder
       value: 1
