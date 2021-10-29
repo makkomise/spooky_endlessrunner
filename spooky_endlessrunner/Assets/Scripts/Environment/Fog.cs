@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fog: MonoBehaviour
 {
-    public float fogDensity = 0.001f;
+    public float fogDensity = 0.002f;
 
     // Update is called once per frame
     void Update()

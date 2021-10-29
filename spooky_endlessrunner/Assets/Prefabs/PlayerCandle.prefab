@@ -126,8 +126,8 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.9716981, g: 0.7870658, b: 0.3987629, a: 1}
   m_Intensity: 10
-  m_Range: 7
-  m_SpotAngle: 60
+  m_Range: 10
+  m_SpotAngle: 57
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97bdc5d85527c624498700fbed0ad00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotLight: {fileID: 0}
   reduceSpeed: 10
 --- !u!1 &2058586816112425887
 GameObject:

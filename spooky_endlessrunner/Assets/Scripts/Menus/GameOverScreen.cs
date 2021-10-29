@@ -22,7 +22,7 @@ public class GameOverScreen : MonoBehaviour
     
     public void Restart()  //Lataa ekan kentän kun painaa play-nappia
     {
-        RenderSettings.fogDensity = 0.001f;
+        RenderSettings.fogDensity = 0.002f;
         SceneManager.LoadScene("Level1");
     }
 
