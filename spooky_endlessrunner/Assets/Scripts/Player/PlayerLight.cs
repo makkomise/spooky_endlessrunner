@@ -20,11 +20,18 @@ public class PlayerLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lightIntensity -= Time.deltaTime;
-        spotLight.intensity = lightIntensity;
+        if (lightIntensity > 0.001) //pienent‰‰ lampun valon m‰‰r‰‰ pikkuhiljaa
+        {
+            lightIntensity -= Time.deltaTime;
+            spotLight.intensity = lightIntensity;
+        }
+        else
+        {
+            return;
+        }        
     }
 
-    public void IncreaseIntensity()
+    public void IncreaseIntensity() //lis‰‰ valon m‰‰r‰‰ 
     {
         if (lightIntensity <= 15)
         {
