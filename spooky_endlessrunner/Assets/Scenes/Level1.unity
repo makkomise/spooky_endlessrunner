@@ -5515,7 +5515,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5618,21 +5618,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 827177249}
     m_Modifications:
-    - target: {fileID: 3544920033230301834, guid: 662ae42950363314cb676bc10d315a91, type: 3}
-      propertyPath: m_Range
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 3544920033230301834, guid: 662ae42950363314cb676bc10d315a91, type: 3}
-      propertyPath: m_SpotAngle
-      value: 39
-      objectReference: {fileID: 0}
     - target: {fileID: 5891591028986532491, guid: 662ae42950363314cb676bc10d315a91, type: 3}
       propertyPath: m_Name
       value: PlayerCandle
-      objectReference: {fileID: 0}
-    - target: {fileID: 5891591028986532491, guid: 662ae42950363314cb676bc10d315a91, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6523730691651176497, guid: 662ae42950363314cb676bc10d315a91, type: 3}
       propertyPath: m_RootOrder
@@ -5640,7 +5628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6523730691651176497, guid: 662ae42950363314cb676bc10d315a91, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.34354705
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 6523730691651176497, guid: 662ae42950363314cb676bc10d315a91, type: 3}
       propertyPath: m_LocalPosition.y

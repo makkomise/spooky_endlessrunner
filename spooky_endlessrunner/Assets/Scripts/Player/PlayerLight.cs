@@ -8,12 +8,13 @@ public class PlayerLight : MonoBehaviour
     public Light spotLight;
     public static float lightIntensity;
     public float reduceSpeed;
+    public int maxIntensity;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        lightIntensity = 15;
+        lightIntensity = maxIntensity;
         spotLight = GetComponent<Light>();
     }
 
@@ -22,7 +23,7 @@ public class PlayerLight : MonoBehaviour
     {
         if (lightIntensity > 0.001) //pienent‰‰ lampun valon m‰‰r‰‰ pikkuhiljaa
         {
-            lightIntensity -= Time.deltaTime;
+            lightIntensity -= (Time.deltaTime * reduceSpeed);
             spotLight.intensity = lightIntensity;
         }
         else
@@ -33,13 +34,13 @@ public class PlayerLight : MonoBehaviour
 
     public void IncreaseIntensity() //lis‰‰ valon m‰‰r‰‰ 
     {
-        if (lightIntensity <= 15)
+        if (lightIntensity <= maxIntensity)
         {
             lightIntensity = lightIntensity + 5;
         }
-        if (lightIntensity > 15)
+        if (lightIntensity > maxIntensity)
         {
-            lightIntensity = 15;
+            lightIntensity = maxIntensity;
         }
     }
 }
