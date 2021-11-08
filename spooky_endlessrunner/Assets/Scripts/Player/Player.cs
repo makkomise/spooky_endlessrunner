@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision) //kun pelaaja osuu kynttil‰‰n, kasvatetaan lampun kirkkautta
     {
-        if (collision.gameObject.CompareTag("Candle"))
+        if (collision.gameObject.CompareTag("Collectible"))
         {
             playerLight.IncreaseIntensity();
         }

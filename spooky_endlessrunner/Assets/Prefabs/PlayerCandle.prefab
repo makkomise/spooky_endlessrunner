@@ -126,18 +126,18 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.9716981, g: 0.7870658, b: 0.3987629, a: 1}
   m_Intensity: 10
-  m_Range: 10
-  m_SpotAngle: 57
+  m_Range: 20
+  m_SpotAngle: 39
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Bias: 0
+    m_NormalBias: 0
+    m_NearPlane: 1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -188,7 +188,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotLight: {fileID: 0}
-  reduceSpeed: 10
+  reduceSpeed: 0.5
+  maxIntensity: 10
 --- !u!1 &2058586816112425887
 GameObject:
   m_ObjectHideFlags: 0
