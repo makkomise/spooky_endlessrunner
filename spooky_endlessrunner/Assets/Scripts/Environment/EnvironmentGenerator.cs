@@ -11,7 +11,7 @@ public class EnvironmentGenerator : MonoBehaviour
     public EnvironmentTiling tilePrefab;
     public float movingSpeed = 10;
     public int tilesToPreSpawn;
-    public int tilesWithoutObstacles = 2;
+    public int tilesWithoutObstacles = 1;
 
     public int score;
     public int highScore;
