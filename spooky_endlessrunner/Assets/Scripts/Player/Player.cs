@@ -8,12 +8,10 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public float gravity = 20.0f;
-    public float jumpHeight = 2.5f;
     public float movementSpeed;
     public PlayerLight playerLight;
 
     Rigidbody rb;
-    bool grounded = false;
     Vector3 defaultScale;
 
     // Start is called before the first frame update
@@ -28,12 +26,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-       
-        if (Input.GetKeyDown(KeyCode.Space) && grounded) //hyppy
-        {
-            rb.velocity = new Vector3(rb.velocity.x, CalculateJumpVerticalSpeed(), rb.velocity.z);
-            grounded = false;
-        }
 
         if (Input.GetKey("left") || Input.GetKey("a")) //vasen
         {
@@ -57,17 +49,6 @@ public class Player : MonoBehaviour
     { 
         rb.AddForce(new Vector3(0, -gravity * rb.mass, 0));
 
-        grounded = false;
-    }
-
-    void OnCollisionStay()
-    {
-        grounded = true;
-    }
-
-    float CalculateJumpVerticalSpeed()  //hyppylaskutoimitus
-    {
-        return Mathf.Sqrt(2 * jumpHeight * gravity);
     }
 
     private void OnCollisionEnter(Collision collision)

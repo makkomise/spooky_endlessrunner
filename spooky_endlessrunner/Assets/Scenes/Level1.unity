@@ -457,7 +457,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 20
-  jumpHeight: 1.3
   movementSpeed: 4
   playerLight: {fileID: 1182285114}
 --- !u!54 &827177248
@@ -5425,6 +5424,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97bdc5d85527c624498700fbed0ad00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!108 &1335335271 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 3544920033230301834, guid: 662ae42950363314cb676bc10d315a91, type: 3}
+  m_PrefabInstance: {fileID: 3033157320740448460}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1383672322
 GameObject:
   m_ObjectHideFlags: 0
@@ -5624,6 +5628,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 827177249}
     m_Modifications:
+    - target: {fileID: 66445461831728419, guid: 662ae42950363314cb676bc10d315a91, type: 3}
+      propertyPath: spotLight
+      value: 
+      objectReference: {fileID: 1335335271}
     - target: {fileID: 5891591028986532491, guid: 662ae42950363314cb676bc10d315a91, type: 3}
       propertyPath: m_Name
       value: PlayerCandle
