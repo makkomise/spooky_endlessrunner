@@ -19,10 +19,6 @@ public class CollectibleMove : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
         if (collision.gameObject.CompareTag("Table"))
         {
             Destroy(gameObject);
