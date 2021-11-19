@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public float gravity = 20.0f;
     public float movementSpeed;
     public PlayerLight playerLight;
+    public AudioSource CollectSound;
+
 
     Rigidbody rb;
     Vector3 defaultScale;
@@ -64,6 +66,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Collectible"))
         {
             playerLight.IncreaseIntensity();
+            CollectSound.Play();
         }
     }
 

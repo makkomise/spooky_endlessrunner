@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    public AudioSource CollectSound;
+    public float movingSpeed = 10;
+    // Start is called before the first frame update
+    void Start()
+    {
+        Destroy(gameObject, 6f);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Translate(Vector3.back * Time.deltaTime * movingSpeed, Space.World);
+    }
 
     private void OnTriggerEnter(Collider collision)
     {
+        if (collision.gameObject.CompareTag("Table"))
+        {
+            Destroy(gameObject);
+        }
         if (collision.gameObject.CompareTag("Player"))
         {
-            CollectSound.Play();
-            Destroy(gameObject, 1);
-        }        
-    }  
-
+            Destroy(gameObject);
+        }
+    }
 }
