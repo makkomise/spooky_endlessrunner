@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Text: "Graphics:\nSimo K. \t  Lead, Character Modeling\nAtte U.  \t  Environment
     & Character Modeling, Animation, Music\nErika J.  \t  UI and Prop Design & Modeling\nPekka
     U.    Prop Design & Modeling, Cinematic\nEbba R.      Character Design\n\nCode:\nMikko
-    T.    Level & Functionality Coding\nJesse N.      Level & Functionality Coding\n"
+    T.    Level & Functionality Coding\nJesse N.     Functionality Coding\n"
 --- !u!222 &739207177
 CanvasRenderer:
   m_ObjectHideFlags: 0
